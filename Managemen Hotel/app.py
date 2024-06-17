@@ -154,8 +154,8 @@ def manage_facilities():
     elif request.method == 'POST':
         data = request.get_json()
         cursor.execute(
-            "INSERT INTO Fasilitas (nama_fasilitas, deskripsi, jam_operasional, gambar_fasilitas) VALUES (%s, %s, %s, %s)",
-            (data['nama_fasilitas'], data['deskripsi'], data['jam_operasional'], data['gambar_fasilitas'])
+            "INSERT INTO Fasilitas (nama_fasilitas, deskripsi, gambar_fasilitas) VALUES (%s, %s, %s)",
+            (data['nama_fasilitas'], data['deskripsi'], data['gambar_fasilitas'])
         )
         db.commit()
         return jsonify({'message': 'Facility created successfully'}), 201
@@ -175,8 +175,8 @@ def manage_facility(id_fasilitas):
     elif request.method == 'PUT':
         data = request.get_json()
         cursor.execute(
-            "UPDATE Fasilitas SET nama_fasilitas = %s, deskripsi = %s, jam_operasional = %s, gambar_fasilitas = %s WHERE id_fasilitas = %s",
-            (data['nama_fasilitas'], data['deskripsi'], data['jam_operasional'], data['gambar_fasilitas'], id_fasilitas)
+            "UPDATE Fasilitas SET nama_fasilitas = %s, deskripsi = %s, gambar_fasilitas = %s WHERE id_fasilitas = %s",
+            (data['nama_fasilitas'], data['deskripsi'], data['gambar_fasilitas'], id_fasilitas)
         )
         db.commit()
         return jsonify({'message': 'Facility updated successfully'})
