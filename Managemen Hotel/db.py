@@ -6,7 +6,7 @@ def connect_db():
         host="localhost",
         user="root",      # Ganti dengan username MySQL Anda
         password="",    # Ganti dengan password MySQL Anda
-        db="db_hotel"
+        db="management_hotel"
     )
 
 def get_db():
